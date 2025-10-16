@@ -20,27 +20,10 @@ export default defineConfig([
             'prettier': prettierPlugin,
         },
         rules: {
+            ...tsPlugin.configs.recommended.rules,
+            ...prettierConfig.rules,
             'prettier/prettier': 'error',
             '@typescript-eslint/no-unused-vars': 'warn',
         }
     }
 ])
-
-// export default defineConfig([
-//     {
-//         parser: '@typescript-eslint/parser',
-//         extends: [
-//             'eslint:recommended',
-//             'plugin:@typescript-eslint/recommended',
-//             'prettier',
-//         ],
-//         plugins: [
-//             '@typescript-eslint',
-//             'prettier',
-//         ],
-//         rules: {
-//             'prettier/prettier': 'error',
-//             '@typescript-eslint/no-unused-vars': 'warn',
-//         }
-//     }
-// ]);
